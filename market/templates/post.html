@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+post merkezi
+{% endblock %}
+
+{% block content %}
+<h1>POSTLAR</h1>
+<form action="/submit" method="post">
+  <label for="message">Mesajınız:</label><br>
+  <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+  <input type="submit" value="Gönder">
+</form>
+<div class="container"> 
+{% for message in messages %}
+<div class="box"> 
+<h6>Yorum</h6>
+<a1 type="color:white"> {{ message.id }} </a1>
+<a1> {{ message.content }} </a1>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+
